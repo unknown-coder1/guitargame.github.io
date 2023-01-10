@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guitar Chords</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            text-align: center;
+            background:linear-gradient(to right,red,orange);
+        }
+        .heading{
+            margin: 40px;
+            font-size: 30px;
+            color: white;
+            text-transform: uppercase;
+        }
+        .w{
+            height: 100px;
+            width: 100px;
+            background-image: url("acidic_mel_1_750.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            font-size: 40px;
+            font-weight: bolder;      
+        }
+        .a{
+            height: 100px;
+            width: 100px;
+            background-image: url("earthy_ian_1_750 (1).png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            font-size: 40px;
+            font-weight: bolder;      
+        }
+        .s{
+            height: 100px;
+            width: 100px;
+            background-image: url("cagey_dani_1_750.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            font-size: 40px;
+            font-weight: bolder;      
+        }
+        .d{
+            height: 100px;
+            width: 100px;
+            background-image: url("artful_luigi_1_750.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            font-size: 40px;
+            font-weight: bolder;      
+        }
+        .k{
+            height: 100px;
+            width: 100px;
+            background-image: url("artful_mae_1_750.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            font-size: 40px;
+            font-weight: bolder;      
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="heading">
+            <h1>Guitar Chords</h1>
+        </div>
+        <div class="guitar-chords-imgs">
+            <button class="w btn">w</button>
+            <button class="a btn">a</button>
+            <button class="s btn">s</button>
+            <button class="d btn">d</button>
+            <button class="k btn">k</button>
+        </div>
+    </div>
+
+
+    <script>
+        var numberOfButtons = document.querySelectorAll(".btn").length;
+        for(i = 0; i<numberOfButtons; i++){
+            document.querySelectorAll("button")[i].addEventListener("click", function(){
+                var buttonInnerHTML = this.innerHTML;
+                makeSound(buttonInnerHTML);
+            });
+        }
+        function makeSound(key){
+            switch(key){
+                case "w":
+                    var audio1 = new Audio("d_major-80593.mp3");
+                    audio1.play();
+                    break;
+
+                case "a":
+                    var audio2 = new Audio("e_major-102091.mp3");
+                    audio2.play();
+                    break;
+
+                case "s":
+                    var audio3 = new Audio("acousticguitar-c-chord-103782.mp3");
+                    audio3.play();
+                    break;
+
+                case "d":
+                    var audio4 = new Audio("a_menor-80594.mp3");
+                    audio4.play();
+                    break;
+
+                case "k":
+                    var audio5 = new Audio("a_major-80595.mp3");
+                    audio5.play();
+                    break;
+
+                    default:alert("please enter valid key")
+            }
+        }
+        addEventListener("keypress",function(event){
+            makeSound(event.key);
+        });
+    </script>
+</body>
+</html>
